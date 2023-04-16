@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestServisMimarisiPart1", "RestServisMimarisiPart1\RestServisMimarisiPart1.csproj", "{519985D1-2819-49AD-8484-DFC0B147FA5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{519985D1-2819-49AD-8484-DFC0B147FA5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{519985D1-2819-49AD-8484-DFC0B147FA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{519985D1-2819-49AD-8484-DFC0B147FA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{519985D1-2819-49AD-8484-DFC0B147FA5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96A2AB4C-45A6-42BD-8C65-03DF9C95B6DF}
+	EndGlobalSection
+EndGlobal
