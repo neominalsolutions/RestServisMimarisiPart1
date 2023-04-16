@@ -1,43 +1,64 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 
 namespace RestServisMimarisiPart1.Controllers
 {
+  // values controller yapılan tüm istekler /api/values endpoint ile yapılacaktır.
+  // api da mvc de olduğu gibi {controller}/{action}/{id} route pattern tercih etmeyiz
   [Route("api/[controller]")]
   [ApiController]
+  // Rest servis geliştiriken Controller isimlerini s takısı ile çoğul kullanam bir geliştirme standartıdır.
   public class ValuesController : ControllerBase
   {
-    // GET: api/<ValuesController>
+    // GET: api/values
+    // 
     [HttpGet]
-    public IEnumerable<string> Get()
+    public IActionResult Get()
     {
-      return new string[] { "value1", "value2" };
+      // OK ile status code 200 başarılı olarak sonuç döndük.
+      // OK result içerisinde response içerir. 
+      // api response'ları varsayılan olarak JSON formatına çevirir.
+      var response = new string[] { "value1", "value2" };
+      return Ok(response);
     }
 
-    // GET api/<ValuesController>/5
+    // GET api/values/1
+    // HTTPGET yöntemi ile id 5 olan kaynağa istek attık
     [HttpGet("{id}")]
-    public string Get(int id)
+    public IActionResult Get(int id)
     {
-      return "value";
+      var response = "value";
+      // GET isteklerinde 200 OK status kod döndürmek bir geliştirme standartıdır.
+      return Ok(response);
     }
 
-    // POST api/<ValuesController>
+    // POST api/values
+    // HTTPPOST yöntemi ile yeni bir kaynak oluşturduk
     [HttpPost]
-    public void Post([FromBody] string value)
+    public IActionResult Post([FromBody] string value)
     {
+      var response = value;
+      // Created Status Code 201 döner.
+      // Yeni bir kaynak oluşturuken 201 durum kodu döndürmek bir geliştirme standartıdır.
+      return Created("api/values", response); 
     }
 
-    // PUT api/<ValuesController>/5
+    // PUT api/values/5
+    // HTTPPUT yöntemi ile 5 numaralı kaydı güncellemek için istek attık.
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] string value)
+    public IActionResult Put(int id, [FromBody] string value)
     {
+      // kaynak güncellemek için 204 NoContent durum kodu döndürmek bir geliştirme standartıdır
+      return NoContent();
     }
 
-    // DELETE api/<ValuesController>/5
+    // DELETE api/values/5
     [HttpDelete("{id}")]
-    public void Delete(int id)
+    public IActionResult Delete(int id)
     {
+      // kaynak silmek için 204 NoContent durum kodu döndürmek bir geliştirme standartıdır
+      return NoContent();
     }
   }
 }
